@@ -12,7 +12,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:firefox": "script/bundle-extension.sh | xargs web-ext run -u https://www.britishcycling.org.uk/events?search_type=upcoming -v -s",
     "build": "react-scripts build",
+    "build:ext": "script/bundle-extension.sh | xargs web-ext build -o -s",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -34,7 +36,9 @@
   "devDependencies": {
     "@commitlint/cli": "^9.1.1",
     "@commitlint/config-conventional": "^9.1.1",
-    "husky": "^4.2.5"
+    "cpy": "^8.1.0",
+    "husky": "^4.2.5",
+    "web-ext": "^4.3.0"
   },
   "husky": {
     "hooks": {

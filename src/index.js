@@ -8,7 +8,9 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root')
+  //document.getElementById('root')
+  //document.getElementsByClassName('page')[0]
+  document.getElementById('events_list')
 );
 
 // If you want your app to work offline and load faster, you can change

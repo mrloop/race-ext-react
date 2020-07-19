@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "Know the Competition",
+  "version": "0.3",
+
+  "description": "Retrieves britishcycling.org.uk/events entrants ordered by regional and national rankings",
+  "homepage_url": "https://github.com/mrloop/race-ext",
+  "icons": {
+    "48": "icon.svg",
+    "96": "icon.svg"
+  },
+  "icon_attribution": "Icon made by https://www.flaticon.com/authors/prosymbols",
+  "content_scripts": [
+    {
+      "matches": ["*://www.britishcycling.org.uk/events*"],
+      "js": [],
+      "css": []
+    }
+  ]
+
+}
