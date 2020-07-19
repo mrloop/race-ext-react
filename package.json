@@ -38,6 +38,8 @@
     "@commitlint/config-conventional": "^9.1.1",
     "cpy": "^8.1.0",
     "husky": "^4.2.5",
+    "jquery": "^3.5.1",
+    "race-lib": "^1.0.0",
     "web-ext": "^4.3.0"
   },
   "husky": {
