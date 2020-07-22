@@ -1,13 +1,16 @@
 import React from 'react';
+import './EventButton.css';
 
 export default function EventButton(props) {
 
   function viewEntrants() {
     window.postMessage({ eventId: props.eventId }, window.location.origin);
-    console.log(props.eventId);
   }
 
   return (
-    <button onClick={viewEntrants}>Entrants {props.eventId}</button>
+    <button
+      onClick={viewEntrants}
+      className="race-ext__button button button--secondary"
+    >Entrants</button>
   );
 }
