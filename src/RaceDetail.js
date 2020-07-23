@@ -24,7 +24,7 @@ export default function RaceDetail({ race }) {
           </thead>
           <tbody>
             <Async
-              fnc={() => race.entrants2()}
+              fnc={() => race.users()}
               loading={() => (
                 <tr>
                   <td colSpan="4">Race Detail Loading...</td>
