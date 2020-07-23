@@ -16,10 +16,25 @@
     "build": "react-scripts build",
     "build:ext": "script/bundle-extension.sh | xargs web-ext build -o -s",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src --ext .js --ext .jsx"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "plugin:prettier/recommended"
+    ]
+  },
+  "prettier": {
+    "trailingComma": "es5"
+  },
+  "lint-staged": {
+    "*.+(js|jsx)": [
+      "eslint --fix"
+    ],
+    "*.+(json|css|md)": [
+      "prettier --write"
+    ]
   },
   "browserslist": {
     "production": [
@@ -37,15 +52,20 @@
     "@commitlint/cli": "^9.1.1",
     "@commitlint/config-conventional": "^9.1.1",
     "cpy": "^8.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "husky": "^4.2.5",
     "jquery": "^3.5.1",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
     "race-fix": "^0.0.2",
     "race-lib": "^1.0.0",
     "web-ext": "^4.3.0"
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
     }
   }
 }
