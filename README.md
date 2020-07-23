@@ -1,3 +1,5 @@
+![Node.js CI](https://github.com/mrloop/race-ext-react/workflows/Node.js%20CI/badge.svg)
+
 # ⚙ race-ext-react
 
 The orginal race-ext was build using an early beta of [glimmerjs](https://glimmerjs.com/). This is a spike in [reactjs](https://reactjs.org).
