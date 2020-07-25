@@ -43,11 +43,16 @@
 }
 
 .race-ext-race-list {
-  overflow-y: hidden;
+  list-style-type: none;
   margin: 0;
 }
 
 .race-ext-race-list-link {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
   cursor: pointer;
 }
 
@@ -60,7 +65,8 @@
   overflow-y: auto;
   table td {
     padding: 0;
-    & a, span{
+    & a,
+    span {
       display: block;
       padding: 10px;
       text-decoration: none;

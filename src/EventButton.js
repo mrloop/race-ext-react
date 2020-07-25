@@ -3,7 +3,9 @@ import "./EventButton.css";
 
 export default function EventButton(props) {
   function viewEntrants() {
-    window.postMessage({ eventId: props.eventId }, window.location.origin);
+    window.dispatchEvent(
+      new CustomEvent("entrants", { detail: props.eventId })
+    );
   }
 
   return (

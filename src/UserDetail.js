@@ -1,13 +1,13 @@
 import React from "react";
 import Async from "./Async";
 
-export default function UserDetail({ user }) {
+export default function UserDetail({ user, index }) {
   if (!user) {
     return "";
   }
 
   return (
-    <tr>
+    <tr data-testid={`user-detail-${index}`}>
       <td>
         <a href={user.points_href} target="_blank" rel="noopener noreferrer">
           {user.name}
@@ -37,7 +37,7 @@ export default function UserDetail({ user }) {
                 {user.current_club}
               </a>
             </td>
-            <td>
+            <td data-testid={`user-detail-${index}-regional-points`}>
               <a
                 href={user.points_href}
                 target="_blank"

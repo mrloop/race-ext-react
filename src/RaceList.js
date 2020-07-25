@@ -9,6 +9,7 @@ export default function RaceList(props) {
     listItems = props.races.map((race) => (
       <li key={race.id}>
         <button
+          data-testid={`race-link-${race.id}`}
           className="race-ext-race-list-link"
           onClick={() => selectRace(race)}
         >

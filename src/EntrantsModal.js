@@ -6,10 +6,8 @@ import "./EntrantsModal.css";
 
 // uncomment this to use fixture data in development mode
 // TODO how do I only run this code / import race-fix in development?
-import { injectFixtures } from "race-fix";
-import { User } from "race-lib";
-User.randomizeRank();
-injectFixtures(CycleEvent);
+// import { injectFixtures } from "race-fix";
+// injectFixtures(CycleEvent);
 
 CycleEvent.inject("fetch", window.fetch.bind());
 CycleEvent.inject("cheerio", query);
@@ -27,19 +25,20 @@ export default function EntrantsModal() {
   const events = {};
 
   useEffect(() => {
-    window.addEventListener("message", receiveMessage);
+    window.addEventListener("entrants", receiveMessage);
     return () => {
-      window.removeEventListener("message", receiveMessage);
+      window.removeEventListener("entrants", receiveMessage);
     };
   });
 
   function receiveMessage(msg) {
-    if (msg.data.eventId && msg.origin === window.location.origin) {
-      const cachedEvent = events[msg.data.eventId];
-      if (!cachedEvent || cachedEvent.id !== msg.data.eventId) {
-        new CycleEvent(msg.data.eventId).init().then((evt) => {
+    const eventId = msg.detail;
+    if (eventId) {
+      const cachedEvent = events[eventId];
+      if (!cachedEvent || cachedEvent.id !== eventId) {
+        new CycleEvent(eventId).init().then((evt) => {
           setSelectedEvent(evt);
-          events[msg.data.eventId] = evt;
+          events[eventId] = evt;
           setClasses("race-ext-modal--show");
         });
       } else if (cachedEvent) {
