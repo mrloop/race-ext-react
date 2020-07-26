@@ -2,7 +2,7 @@
 
 # ⚙ race-ext-react
 
-The orginal race-ext was build using an early beta of [glimmerjs](https://glimmerjs.com/). This is a spike in [reactjs](https://reactjs.org).
+The orginal race-ext was build using an early beta of [glimmerjs](https://glimmerjs.com/). This is a spike in [reactjs](https://reactjs.org). See original blog post [here](https://blog.mrloop.com/javascript/glimmerjs/2017/11/01/know-the-competition.html)
 
 Web Extension to retrieve britishcycling.org.uk/events entrants ordered by regional and national rankings
 
@@ -25,12 +25,14 @@ You will need the following things properly installed on your computer.
 ## Installation
 
 - `git clone git@github.com:mrloop/race-ext-react.git` this repository
-- `cd race-ext`
+- `cd race-ext-react`
 - `yarn`
 
 ## Running / Development
 
-- `yarn start:firefox`
+- `yarn build; yarn start:firefox`
+
+Unfortunately no live reloading at the moment
 
 ### Building
 
